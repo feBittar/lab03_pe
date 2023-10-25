@@ -51,6 +51,17 @@ Conjunto *conjunto_uniao(Conjunto *A, Conjunto *B)
 
     return novoConj;
 }
+int conjunto_pertence(int a, Conjunto *A)
+{
+    int i = 0;
+    for (i; i < A->tamanho; i++)
+    {
+        if(a == A->elementos[i])
+            return 1;
+    }
+    if (i==A->tamanho)
+        return 0;
+}
 
 void lerVetor(int v[])
 {
@@ -80,8 +91,8 @@ int main()
     printf("Uniao: {");
     while (i < uniao->tamanho)
     {
-        
-        printf("%d%s",uniao->elementos[i], ";");
+
+        printf("%d%s", uniao->elementos[i], ";");
         i++;
     }
     printf("}");
