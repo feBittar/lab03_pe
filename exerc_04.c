@@ -4,22 +4,34 @@
 #include <stdio.h>
 #include <string.h>
 
+int searchWord(char str[], char word[])
+{
+    int i = 0, j = 0;
+    for (i = 0; i < strlen(str); i++)
+    {
+        for (j = 0; j < strlen(word); j++)
+        {
+            if (str[i + j] != word[j])
+                break;
+        }
+        if (word[j] == '\n')
+            return 1;
+    }
+    return 0;
+}
+
 int main()
 {
-    char frase[1000];
-    char palavra[100];
+    char str[1000];
+    char word[100];
     printf("Digite uma frase: ");
-    fgets(frase, 1000, stdin);
+    fgets(str, 1000, stdin);
     printf("Digite uma palavra: ");
-    fgets(palavra, 100, stdin);
+    fgets(word, 100, stdin);
 
-    
-    printf("%s", palavra);
-    printf("%s", frase);
-
-
-
-
-
+    if (searchWord(str, word))
+        printf("sim");
+    else
+        printf("nao");
     return 0;
 }
