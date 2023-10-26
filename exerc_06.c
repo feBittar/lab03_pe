@@ -13,7 +13,7 @@ typedef struct
 Conjunto *conjunto(int v[])
 {
     Conjunto *conjunto = malloc(sizeof(Conjunto));
-    for (int i = 0; v[i] != -333; i++)
+    for (int i = 0; i < v[0]; i++)
     {
         conjunto->tamanho += 1;
         conjunto->elementos[i] = v[i];
@@ -56,24 +56,23 @@ int conjunto_pertence(int a, Conjunto *A)
     int i = 0;
     for (i; i < A->tamanho; i++)
     {
-        if(a == A->elementos[i])
+        if (a == A->elementos[i])
             return 1;
     }
-    if (i==A->tamanho)
+    if (i == A->tamanho)
         return 0;
 }
 
 void lerVetor(int v[])
 {
-    int k = 0, i = 0;
-    printf("Digite os valores do vetor. Quando desejar finalizar o vetor, digite -333\n");
-    while (k != -333)
-    {
-        printf("%s %d %s", "Digite o", i + 1, "valor do vetor: ");
-        scanf("%d", &v[i]);
+    int i = 1;
+    printf("Digite o tamanho do vetor: ");
+    scanf("%d", &v[0]);
 
-        if (v[i] == -333)
-            k = -333;
+    while (i <= v[0])
+    {
+        printf("%s %d %s", "Digite o", i, "valor do vetor: ");
+        scanf("%d", &v[i]);
         i++;
     }
 }
