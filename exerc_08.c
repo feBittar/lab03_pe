@@ -90,19 +90,19 @@ int main()
 {
     // TESTE
 
-    // Cadastro cadastro;
-    // cadastro.num_alunos = 0;
-    // cadastrar(&cadastro);
-    // cadastrar(&cadastro);
-    // cadastrar(&cadastro);
+    Cadastro cadastro;
+    cadastro.num_alunos = 0;
+    cadastrar(&cadastro);
+    cadastrar(&cadastro);
+    cadastrar(&cadastro);
 
-    // char nome[30];
-    // printf("Digite o nome do aluno para busca: ");
-    // scanf("%s", nome);
-    // buscarNome(&cadastro, nome);
-    // Data inicio = {1, 1, 2000};
-    // Data fim = {31, 12, 2005};
+    char nome[30];
+    printf("Digite o nome do aluno para busca: ");
+    scanf("%s", nome);
+    buscarNome(&cadastro, nome);
+    Data inicio = {1, 1, 2000};
+    Data fim = {31, 12, 2005};
 
-    // printf("Busca por Data de Nascimento:\n");
-    // buscarNasc(&cadastro, inicio, fim);
+    printf("Busca por Data de Nascimento:\n");
+    buscarNasc(&cadastro, inicio, fim);
 }
